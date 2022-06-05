@@ -3,7 +3,7 @@ import "./App.css";
 import AppHeader from './AppHeader';
 import AddContact from './AddContact';
 import Contactlist from './Contactlist';
-
+import Contactcard from './Contactcard';
 export default function App() {
   const contacts = [
     {
@@ -24,6 +24,7 @@ export default function App() {
     <AddContact />
     {/* props passing contacts property and value */}
     <Contactlist contacts={contacts}/>
+    <Contactcard/>
     </div>
   );
 }
