@@ -1,20 +1,21 @@
 import React from 'react';
-import Contactcard from './Contactcard';
 //props used pass contacts array
 const Contactlist = (props) => {
 // console.log(props)
-const renderContactlist = props.contacts.map((contacts)=>{
+const renderContactlist = props.contacts.map((contact)=>{
+//  const {id,name,email} = props.contact;
   return(
-    <Contactcard/>
-    // <div class="item">
-    //   <div className="content">
-    //     <div className="header">
-    //       {contacts.name}</div>
-    //       <div>{contacts.email}</div>
-    //       {/* <div>Remove</div> */}
-    //   </div>
-    //   <i className="trash-alternate-outline-icon">delete</i>
-    // </div>
+    <div class="item">
+      <img className="ui avatar image " src={} alt="user" />
+      <div className="content">
+        <div className="header">
+          {contact.name}</div>
+          <div>{contact.email}</div>
+          {/* <div>Remove</div> */}
+      </div>
+      <i className="trash-alternate-outline-icon"
+      style={{color:"red"}}>delete</i>
+    </div>
   )
 })
   return(
