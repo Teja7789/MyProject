@@ -20,12 +20,16 @@ export default function App() {
   //     email:"mukhesha@gmail.com"
   //   }
   // ]
+  const addContactHandler = (contacts) =>{
+    console.log(contacts)
+  }
   return (
     <div className="ui container">
     New app
     <AppHeader/>
     {/* state */}
-    <AddContact />
+    {/* props as fuction used to transfer data from child to parent  */}
+    <AddContact addContactHandler={addContactHandler}/>
     {/* props passing contacts property and value */}
     <Contactlist contacts={contacts}/>
     {/* <Contactcard/> */}
