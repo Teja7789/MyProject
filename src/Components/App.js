@@ -20,8 +20,10 @@ export default function App() {
   //     email:"mukhesha@gmail.com"
   //   }
   // ]
-  const addContactHandler = (contacts) =>{
-    console.log(contacts)
+  const addContactHandler = (contact) =>{
+    console.log(contact)
+    //from AddContact ==> contactlist
+    setContacts([...contacts, contact])
   }
   return (
     <div className="ui container">
