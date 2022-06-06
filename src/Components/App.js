@@ -4,6 +4,7 @@
 import React,{ useState, useEffect } from "react";
 
 import "./App.css";
+import { uuid } from "uuidv4";
 import AppHeader from './AppHeader';
 import AddContact from './AddContact';
 import Contactlist from './Contactlist';
@@ -27,7 +28,7 @@ export default function App() {
   const addContactHandler = (contact) =>{
     console.log(contact)
     //from AddContact ==> contactlist
-    setContacts([...contacts, contact])
+    setContacts([...contacts,{id:uuid(),...contacts} ])
   }
   //useEffect
   //setItem
