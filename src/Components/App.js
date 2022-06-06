@@ -1,5 +1,7 @@
 //reacthook used for react functional component -useState
-import React,{ useState } from "react";
+//reacthook -useEffect  to store data on localStorage
+//useEffect used to render the component again
+import React,{ useState, useEffect } from "react";
 
 import "./App.css";
 import AppHeader from './AppHeader';
@@ -8,6 +10,8 @@ import Contactlist from './Contactlist';
 // import Contactcard from './Contactcard';
 export default function App() {
   const [contacts, setContacts] = useState([])
+  //key
+  const LOCAL_STORAGE_KEY = "contacts"
   // const contacts = [
   //   {
   //     id:"1",
@@ -25,6 +29,16 @@ export default function App() {
     //from AddContact ==> contactlist
     setContacts([...contacts, contact])
   }
+  //useEffect
+  //setItem
+  useEffect(()=>{
+localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts))
+  },[contacts])
+ //getItem -- query
+ useEffect(()=>{
+ const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+ if(retriveContacts) setContacts(retriveContacts);
+    },[])
   return (
     <div className="ui container">
     New app
