@@ -1,12 +1,20 @@
 import React from 'react';
-const AppHeader = () => {
- 
+const Contactcard = (props) => {
+ //destructuring
+//  const {id,name,email} = props.contact;
   return(
-    <div>
-     AppHeader
-      </div>
-
+    <div class="item">
+      {/* <div className="content">
+        <div className="header">
+           {name}</div>
+          <div>{email}</div> */}
+          
+          <div>Remove</div>
+      {/* // </div> */}
+      <i className="trash-alternate-outline-icon"
+      style={{color:"red"}}>delete</i>
+    </div>
   );
 }
  
-export default AppHeader;
+export default Contactcard;
